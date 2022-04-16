@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> TUTORIAL SOBRE C </title>
+    </head>
+    <body>
+        <h1>Estruturas na linguagem C</h1>
+        <div>
+            <h2>O que são</h2>
+            <p><b>Estruturas</b>, também conhecidas como Registros, definem tipos de dados que agrupam variáveis sob um mesmo tipo de dado. A ideia de usar uma <b>estrutura</b> é permitir que, ao armazenar os dados de uma mesma entidade, isto possa ser feito com uma única variável. Por exemplo, se for preciso armazenar a altura, o peso e a idade de uma pessoa, pode-se criar uma <b>estrutura</b> chamada Pessoa e agrupar os dados em um único tipo de dado</p>
+            <ul>
+                <li>
+                    <b>Exemplo:</b>
+                </li>
+            </ul>
+            <p style="font-family: Courier New,Courier,monospace;">typedef struct {</p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; float Peso;   </p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; int Idade;    </p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; float Altura; </p>
+            <p style="font-family: Courier New,Courier,monospace;">} Pessoa; </p>
+            <p style="font-family: Courier New,Courier,monospace;">Pessoa Joao, P1, P2;</p>
+
+        </div>
+        <div>
+            <h2>Retorno de Structs em Funções</h2>
+            <p>Como uma struct define um tipo de dado, este tipo pode ser retornado em uma função, da mesma forma que ocorre com qualquer outro tipo de dado. </p>
+            <ul>
+                <li>
+                    <b>Exemplo:</b>
+                </li>
+            </ul>
+            <p style="font-family: Courier New,Courier,monospace;">Pessoa SetPessoa(int idade, float peso, float altura) { </p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; Pessoa P;</p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; P.Idade = idade; </p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; P.Peso = peso; </p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; P.Altura = altura; </p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; return P; </p>
+            <p style="font-family: Courier New,Courier,monospace;">}</p>
+        </div>
+        <div>
+            <h2>Passagem de Structs por Referência</h2>
+            <p>É passada para a função uma referência da estrutura, sendo possível alterar o conteúdo original usando-se esta referência.</p>
+            <p>Para passar uma struct por referência, deve-se passar um ponteiro para a struct.</p>
+            <ul>
+                <li>
+                    <b>Exemplo:</b>
+                </li>
+            </ul>
+            <p style="font-family: Courier New,Courier,monospace;">void SetPessoa(Pessoa *P, int idade, float peso, float altura) {</p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; P->Idade = idade;</p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; P->Peso = peso; </p>
+            <p style="font-family: Courier New,Courier,monospace;"> &nbsp; &nbsp; P->Altura = altura; </p>
+            <p style="font-family: Courier New,Courier,monospace;">}</p>
+        </div>
+    </body>
+    
